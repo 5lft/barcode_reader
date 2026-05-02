@@ -11,11 +11,20 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000', // 환경 변수의 PORT와 맞추세요
+        url: 'http://54.252.180.55:3000',
       },
     ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
   },
-  apis: ['./index.js'], // API 주석이 작성될 파일 위치
+  apis: ['./routes/*.js'],
 };
 
 const specs = swaggerJsdoc(options);
