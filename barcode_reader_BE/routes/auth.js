@@ -54,7 +54,14 @@ const db = require('../db');
  *                 message:
  *                   type: string 
  *       500:
- *         description: 서버 에러 (Relation does not exist 등)
+ *         description: 서버 에러
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
  */
 router.post('/register', async (req, res) => {
   const { login_id, password, name, phone, company_name, company_code } = req.body;
